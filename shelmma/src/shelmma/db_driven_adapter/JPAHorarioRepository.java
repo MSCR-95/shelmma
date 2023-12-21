@@ -41,11 +41,14 @@ public class JPAHorarioRepository implements HorarioRepository {
     @Override
     public Horario findByNombre(String nombre) {
         HorarioEntity horarioEntityOptional = haaJpaRepository.findByNombre(nombre);
+        /*
         HorarioEntity horarioEntity = horarioEntityOptional.orElse(null);
         if (horarioEntity == null) {
             throw new RuntimeException("El nombre no existe");
         }
         return horarioEntity.toHorario();
+        */
+        return null;
     }
 
     @Override

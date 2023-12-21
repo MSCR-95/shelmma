@@ -29,17 +29,21 @@ public class JPAUserRepository implements UserRepository {
 	@Override
 	public User findByUsername(String username) {
 		//EL error creo que es porque HAAJpaUserRepository es <UserEntity, Long> y usa Long en vez de String
+		/*
 		Optional<UserEntity> userEntityOptional = haaJpaRepository.;
 		UserEntity userEntity = userEntityOptional.orElse(null);
 		if (userEntity == null) {
 			throw new RuntimeException("No existen ningún usuario con el nombre especificado");
 		}
 		return userEntity.toUser();
+		*/
+		return null;
 		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public User findByEmail(String email) {
+		/*
 		//Igual que el anterior
 		Optional<UserEntity> userEntityOptional = haaJpaRepository.;
 		UserEntity userEntity = userEntityOptional.orElse(null);
@@ -47,6 +51,8 @@ public class JPAUserRepository implements UserRepository {
 			throw new RuntimeException("No existe ningun usuario con email especificado");
 		}
 		return userEntity.toUser();
+		*/
+		return null;
 	}
 
 	@Override

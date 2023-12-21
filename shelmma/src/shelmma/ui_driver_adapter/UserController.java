@@ -4,9 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -89,6 +87,7 @@ public class UserController {
         }
 
         // Verifica si el nombre de usuario y el correo electrónico ya existen
+        /*
         if (userService.findByUsername(user.getUsername()).isPresent()) {
             result.rejectValue("username", "error.user", "Ya existe un usuario con este nombre de usuario");
         }
@@ -99,7 +98,7 @@ public class UserController {
         if (result.hasErrors()) {
             return "signup";
         }
-
+	*/
         // Hashea la contraseña antes de almacenarla en la base de datos (deberías usar una técnica segura)
         //user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setPassword(user.getPassword());

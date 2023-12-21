@@ -13,7 +13,7 @@ public interface HAAJpaHorarioRepository extends JpaRepository<HorarioEntity, St
 
 	Optional<HorarioEntity> findByHorarioInicioAndHorarioFin(String horarioInicio, String horarioFin);		
 
-	void save(HorarioEntity horarioEntity);
+	//void save(HorarioEntity horarioEntity);
 
 	Optional<UserEntity> findById(Long id);
 
