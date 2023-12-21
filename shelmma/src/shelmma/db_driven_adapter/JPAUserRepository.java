@@ -21,7 +21,7 @@ public class JPAUserRepository implements UserRepository {
 		Optional<UserEntity> userEntityOptional = haaJpaRepository.findById(id);
 		UserEntity userEntity = userEntityOptional.orElse(null);
 		if (userEntity == null) {
-			throw new RuntimeException("El libro no existe");
+			throw new RuntimeException("No existen ningún usuario con el identificador indicado");
 		}
 		return userEntity.toUser();
 	}
@@ -32,7 +32,7 @@ public class JPAUserRepository implements UserRepository {
 		Optional<UserEntity> userEntityOptional = haaJpaRepository.;
 		UserEntity userEntity = userEntityOptional.orElse(null);
 		if (userEntity == null) {
-			throw new RuntimeException("El libro no existe");
+			throw new RuntimeException("No existen ningún usuario con el nombre especificado");
 		}
 		return userEntity.toUser();
 		// TODO Auto-generated method stub
@@ -44,7 +44,7 @@ public class JPAUserRepository implements UserRepository {
 		Optional<UserEntity> userEntityOptional = haaJpaRepository.;
 		UserEntity userEntity = userEntityOptional.orElse(null);
 		if (userEntity == null) {
-			throw new RuntimeException("El libro no existe");
+			throw new RuntimeException("No existe ningun usuario con email especificado");
 		}
 		return userEntity.toUser();
 	}

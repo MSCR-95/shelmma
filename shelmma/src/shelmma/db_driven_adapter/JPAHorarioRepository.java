@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import shelmma.core.domain.Horario;
 import shelmma.core.domain.User;
@@ -11,7 +12,7 @@ import shelmma.core.driven_ports.HorarioRepository;
 import shelmma.db_driven_adapter.domain.HorarioEntity;
 import shelmma.db_driven_adapter.domain.UserEntity;
 import shelmma.db_driven_adapter.jparepository.HAAJpaHorarioRepository;
-
+@Component
 public class JPAHorarioRepository implements HorarioRepository {
 
 	@Autowired
