@@ -9,6 +9,7 @@ public class Horario {
 	private String nombre;
 
 	public Horario(Long id2, String dia, String horarioInicio, String horarioFin, String nombre) {
+		this.id = id2;
 		this.dia = dia;
 		this.horarioInicio = horarioInicio;
 		this.horarioFin = horarioFin;

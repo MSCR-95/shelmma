@@ -41,7 +41,16 @@ public class HorarioEntity {
         this.nombre = nombre;
     }
 
-    public Long getId() {
+    public HorarioEntity(Horario horario) {
+    	super();
+    	this.id = horario.getId();
+    	this.dia = horario.getDia();
+        this.horarioInicio = horario.getHorarioInicio();
+        this.horarioFin = horario.getHorarioFin();
+        this.nombre = horario.getNombre();
+	}
+
+	public Long getId() {
         return id;
     }
 

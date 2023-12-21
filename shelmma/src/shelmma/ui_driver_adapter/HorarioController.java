@@ -37,8 +37,8 @@ public class HorarioController {
         }
 
         // Verifica si ya existe un horario con el mismo día y nombre
-        Optional<Horario> existingHorario = horarioService.findByDiaAndNombre(horario.getDia(), horario.getNombre());
-        if (existingHorario.isPresent()) {
+        Horario existingHorario = horarioService.findByDiaAndNombre(horario.getDia(), horario.getNombre());
+        if (existingHorario.equals(horario)) {
             result.rejectValue("nombre", "error.horario", "Ya existe un horario con este día y nombre");
         }
 
@@ -68,9 +68,9 @@ public class HorarioController {
 
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable Long id, ModelMap model) {
-        Optional<Horario> horario = ((Object) horarioService).getHorarioById(id);
-        if (horario.isPresent()) {
-            model.addAttribute("horario", horario.get());
+        Horario horario =  horarioService.getHorario(id);
+        if (horario.equals(horario)) {
+            model.addAttribute("horario", horario.getHorarioFin());
             return "editHorario";
         } else {
             return "redirect:/horario/list";

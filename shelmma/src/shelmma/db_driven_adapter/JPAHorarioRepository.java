@@ -39,7 +39,7 @@ public class JPAHorarioRepository implements HorarioRepository {
 
     @Override
     public Horario findByNombre(String nombre) {
-        Optional<HorarioEntity> horarioEntityOptional = haaJpaRepository.findByNombre(nombre);
+        HorarioEntity horarioEntityOptional = haaJpaRepository.findByNombre(nombre);
         HorarioEntity horarioEntity = horarioEntityOptional.orElse(null);
         if (horarioEntity == null) {
             throw new RuntimeException("El nombre no existe");
@@ -52,6 +52,7 @@ public class JPAHorarioRepository implements HorarioRepository {
         haaJpaRepository.save(new HorarioEntity(horario));
     }
 
+    //tenemos que añadir un horario al usuario, o relacionarlos por alguna clave
 	@Override
 	public Horario findById(Long id) {
 		Optional<UserEntity> userEntityOptional = haaJpaRepository.findById(id);
@@ -59,7 +60,27 @@ public class JPAHorarioRepository implements HorarioRepository {
 		if (userEntity == null) {
 			throw new RuntimeException("El id del horario no existe");
 		}
-		return horarioEntity.toHorario();
+		
+		//return horarioEntity.toHorario();
+		return null;
+	}
+//AÑADIDO
+	@Override
+	public Horario findByDiaAndNombre(String dia, String nombre) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	@Override
+	public Horario findByDiaAndNombreAndIdNot(String dia, String nombre, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+//AÑADIDO
 }
